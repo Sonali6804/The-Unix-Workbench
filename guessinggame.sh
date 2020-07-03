@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 
 # File: guessinggame.sh
-
-
-
 dirarray=($(ls | wc -l))
 
 dircount=${#dirarray[@]}
 
 dirguess=0
-
-
-
 function checkguess {
 
     # Usage of an if statement
@@ -31,9 +25,6 @@ function checkguess {
     fi
 
 }
-
-
-
 # Usage of a loop
 
 while [ $dirguess -ne $dircount ]
@@ -45,12 +36,7 @@ echo "Guess the number of directories!"
 # Collecting user response
 
 read dirguess
-
-
-
 $(checkguess $dirguess $dircount)
-
-
 
 done
 
