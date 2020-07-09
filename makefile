@@ -2,9 +2,9 @@ README.md : guessinggame.sh
 
 	touch README.md
 
-	echo "Title of the project: __Peer-graded Assignment: Bash, Make, Git, and GitHub__" > README.md
+	echo "Title of the project: The Unix Workbench" > README.md
 
-	echo "\nDate make ran at:" >> README.md
+	echo "\nDate makefile ran at:" >> README.md
 
 	date >> README.md
 
