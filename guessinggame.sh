@@ -1,37 +1,37 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# File: guessinggame.sh
+n1=$(ls -1 | wc -l)
 
-count=$(ls -1 | wc -l)
+guesses=1
 
-function correct_guess {        # One function...
+echo -n "Guess how many files are in the current directory?"
 
-    if [[ $1 -lt $2 ]]          # One if statement ...
+while read n2; do
 
-    then
+if   [[ $n2 -eq $n1 ]]; then
 
-	echo "Too low!try again"
+break;  
 
-    elif [[ $1 -gt $2 ]]
+else
 
-    then
+echo    
 
-	echo "Too high!try again"
+if [[ $n2 -gt $n1 ]]; then 
 
-    else
+echo -n "Sorry, your guess is too high. Try Again:"
 
-	echo "Congratulations! You guessed right!"
+elif [[ $n2 -lt $n1 ]]; then
 
-    fi
+echo -n "Sorry, your guess is too low. Try Again:"
 
-}
+fi      
 
-while [[ $count -ne $guess ]]    # One loop...
+fi
 
-do
-
-    read -p "Guess how many files are in the current directory? " guess
-
-    echo $(correct_guess $guess $count)
+guesses=$((guesses+1))
 
 done
+
+echo
+
+echo "Congratulations! You guessed right!"
